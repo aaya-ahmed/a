@@ -1,6 +1,8 @@
 var gamediv=document.querySelector("#game")
 var start=document.querySelector('#startbtn')
 var container=document.querySelector('.container')
+var finish=document.querySelector('.finish')
+var replay=document.querySelector('#replay')
 const fruits= ['🥔', '🍒', '🥑', '🌽', '🥕', '🍇', '🍉', '🍌', '🥭', '🍍']
 const rows=4
 const cols=5
@@ -75,6 +77,14 @@ const startgame=()=>{
     let timer=setInterval(() => {
         if(document.querySelectorAll('.backcard').length==0){
             clearInterval(timer)
+            finish.style.display="block"
+            replay.addEventListener("click",()=>{
+                shuffle(fruits)
+                generateboard(fruits,rows,cols)
+                finish.style.display="none"
+                time=0
+                startgame()
+            })
         }
         time++
         document.getElementById('timer').innerHTML=time
