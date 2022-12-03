@@ -4,8 +4,9 @@ const fruits= ['🥔', '🍒', '🥑', '🌽', '🥕', '🍇', '🍉', '🍌', '
 const rows=4
 const cols=5
 var time=0
-var x = window.matchMedia("(max-width: 660px)")
-
+var largescreen= window.matchMedia("(min-width: 900px)")
+var mediumscreen= window.matchMedia("(max-width: 900px)")
+var smallscreen= window.matchMedia("(max-width: 400px)")
 const shuffle=(array)=>{
     currentIndex=array.length
     while(currentIndex!==0){
@@ -18,12 +19,6 @@ const shuffle=(array)=>{
     return array
 }
 const generateboard=(array,rows,cols)=>{
-    gamediv.style.cssText=`
-    width:${cols*100+10*cols}px;height:${rows*100+10*rows}px;
-    display:grid;
-    grid-gap:10px 10px;
-    grid-template-rows:repeat(${rows},1fr);
-    grid-template-columns:repeat(${cols},1fr);`
     fullcards=shuffle([...array,...array])
     var dimention=fullcards.length-1
     for(let j=0;j<rows;j++){
@@ -87,15 +82,28 @@ start.addEventListener('click',()=>{
     startgame()
     start.style.cssText="display:none"
 })
-function myFunction(x) {
+function mediaquiry(x) {
+    let width;
+    if(x.media=="(min-width: 900px)"){
+        // console.log("1")
+        width=`width:${cols*100+10*cols}px;height:${rows*100+10*rows}px`;
+    }
+    else if(x.media=="(max-width: 900px)"){
+        // console.log("2")
+        width=`width:${cols*70+10*cols}px;height:${rows*70+10*rows}px`;
+    }
+    else if(x.media=="(max-width: 400px)"){
+        console.log("3")
+        width=`width:${cols*50+10*cols}px;height:${rows*50+10*rows}px`;
+    }
+    console.log(width)
     gamediv.style.cssText=`
-    width:${cols*80+10*cols}px;height:${rows*80+10*rows}px;
+    ${width};
     display:grid;
     grid-gap:10px 10px;
     grid-template-rows:repeat(${rows},1fr);
     grid-template-columns:repeat(${cols},1fr);`
-  }
-  
-  var x = window.matchMedia("(max-width: 700px)")
-  myFunction(x) // Call listener function at run time
-  x.addListener(myFunction)
+}
+largescreen.addListener(mediaquiry(largescreen))
+mediumscreen.addListener(mediaquiry(mediumscreen))
+smallscreen.addListener(mediaquiry(smallscreen))
