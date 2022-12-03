@@ -78,10 +78,6 @@ const startgame=()=>{
 }
 shuffle(fruits)
 generateboard(fruits,rows,cols)
-start.addEventListener('click',()=>{
-    startgame()
-    start.style.cssText="display:none"
-})
 function mediaquiry(x) {
     let width;
     // if(x.media=="(min-width: 400px)"){
@@ -107,3 +103,4 @@ function mediaquiry(x) {
 largescreen.addListener(mediaquiry(largescreen))
 mediumscreen.addListener(mediaquiry(mediumscreen))
 smallscreen.addListener(mediaquiry(smallscreen))
+startgame()
