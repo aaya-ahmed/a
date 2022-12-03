@@ -72,3 +72,16 @@ main .container .time button{
 .toggle{
     width: 0px;
 }
+@media(max-width:660px) {
+    .frontcard{
+        width: 70px;
+        height: 70px;
+        font-size: 20px;
+        line-height: 35px;
+    }
+    .backcard{
+        width: 70px;
+        height:70px;
+        margin-top: -70px;
+    }
+}

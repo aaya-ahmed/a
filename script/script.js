@@ -4,6 +4,8 @@ const fruits= ['🥔', '🍒', '🥑', '🌽', '🥕', '🍇', '🍉', '🍌', '
 const rows=4
 const cols=5
 var time=0
+var x = window.matchMedia("(max-width: 660px)")
+
 const shuffle=(array)=>{
     currentIndex=array.length
     while(currentIndex!==0){
@@ -16,11 +18,12 @@ const shuffle=(array)=>{
     return array
 }
 const generateboard=(array,rows,cols)=>{
-    gamediv.style.cssText=`display:grid;
+    gamediv.style.cssText=`
+    width:${cols*100+10*cols}px;height:${rows*100+10*rows}px;
+    display:grid;
     grid-gap:10px 10px;
     grid-template-rows:repeat(${rows},1fr);
-    grid-template-columns:repeat(${cols},1fr);
-    width:${cols*100+10*cols}px;height:${rows*100+10*rows}px;`
+    grid-template-columns:repeat(${cols},1fr);`
     fullcards=shuffle([...array,...array])
     var dimention=fullcards.length-1
     for(let j=0;j<rows;j++){
@@ -84,3 +87,15 @@ start.addEventListener('click',()=>{
     startgame()
     start.style.cssText="display:none"
 })
+function myFunction(x) {
+    gamediv.style.cssText=`
+    width:${cols*80+10*cols}px;height:${rows*80+10*rows}px;
+    display:grid;
+    grid-gap:10px 10px;
+    grid-template-rows:repeat(${rows},1fr);
+    grid-template-columns:repeat(${cols},1fr);`
+  }
+  
+  var x = window.matchMedia("(max-width: 700px)")
+  myFunction(x) // Call listener function at run time
+  x.addListener(myFunction)
