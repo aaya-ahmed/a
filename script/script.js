@@ -84,17 +84,17 @@ start.addEventListener('click',()=>{
 })
 function mediaquiry(x) {
     let width;
-    if(x.media=="(min-width: 900px)"){
-        // console.log("1")
-        width=`width:${cols*100+10*cols}px;height:${rows*100+10*rows}px`;
+    if(x.media=="(min-width: 400px)"){
+        console.log("3")
+        width=`width:${cols*50+10*cols}px;height:${rows*50+10*rows}px`;
     }
-    else if(x.media=="(max-width: 900px)"){
+    if(x.media=="(min-width: 400px)"){
         // console.log("2")
         width=`width:${cols*70+10*cols}px;height:${rows*70+10*rows}px`;
     }
-    else if(x.media=="(max-width: 400px)"){
-        console.log("3")
-        width=`width:${cols*50+10*cols}px;height:${rows*50+10*rows}px`;
+    if(x.media=="(min-width: 900px)"){
+        // console.log("1")
+        width=`width:${cols*100+10*cols}px;height:${rows*100+10*rows}px`;
     }
     console.log(width)
     gamediv.style.cssText=`

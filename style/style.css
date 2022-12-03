@@ -70,7 +70,7 @@ main .container .time button{
     margin-top: -100px;
     z-index: 7;
     position: absolute;
-    background-image: linear-gradient(to right,#457e6b82,#59938080,#65a7912a);
+    background-image: linear-gradient(to right,#457e6b,#599380,#65a791);
     border-radius:10px;
     transition: width 800ms;
 }
