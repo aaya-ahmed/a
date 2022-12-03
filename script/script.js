@@ -84,11 +84,11 @@ start.addEventListener('click',()=>{
 })
 function mediaquiry(x) {
     let width;
-    if(x.media=="(min-width: 400px)"){
-        console.log("3")
-        width=`width:${cols*50+10*cols}px;height:${rows*50+10*rows}px`;
-    }
-    if(x.media=="(min-width: 400px)"){
+    // if(x.media=="(min-width: 400px)"){
+    //     console.log("3")
+    //     width=`width:${cols*50+10*cols}px;height:${rows*50+10*rows}px`;
+    // }
+    if(x.media=="(min-width: 200px)"){
         // console.log("2")
         width=`width:${cols*70+10*cols}px;height:${rows*70+10*rows}px`;
     }
