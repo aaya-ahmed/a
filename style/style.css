@@ -73,6 +73,7 @@ main .container .time button{
     background-image: linear-gradient(to right,#457e6b,#599380,#65a791);
     border-radius:10px;
     transition: width 800ms;
+    
 }
 .toggle{
     width: 0px;
