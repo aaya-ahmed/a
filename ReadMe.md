@@ -1,5 +1,5 @@
 <h1>Memory Game</h1>
-<p>can play this game when you<a href="https://aaya-ahmed.github.io/memory-game/">click here</a></p>
+<p>can play this game when you <a href="https://aaya-ahmed.github.io/memory-game/" target="_blank" >click here</a></p>
 <img src="./images/memory.png" width="300px" height="300px"/>
 <h1>Contributing</h1>
 <ul>
