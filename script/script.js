@@ -29,6 +29,7 @@ const generateboard=(array,rows,cols)=>{
     for(let j=0;j<rows;j++){
         for(let i=0;i<cols;i++){
             let card=document.createElement('div')
+            card.setAttribute('class','card')
             let front=document.createElement('div')
             let back=document.createElement('div')
             front.innerHTML=fullcards[dimention--]
@@ -92,8 +93,8 @@ const startgame=()=>{
     play()
 }
 shuffle(fruits)
-generateboard(fruits,rows,cols)
 start.addEventListener('click',()=>{
+    generateboard(fruits,rows,cols)
     startgame()
     container.style.transform="rotate(0deg)"
     start.style.cssText="display:none"
