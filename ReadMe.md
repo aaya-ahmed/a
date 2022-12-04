@@ -1,6 +1,6 @@
 <h1>Memory Game</h1>
 <p>can play this game when you <a href="https://aaya-ahmed.github.io/memory-game/" target="_blank" >click here</a></p>
-<img src="./images/memory.png" width="300px" height="300px"/>
+<img src="./images/memory.png" width="500px" height="500px"/>
 <h1>Contributing</h1>
 <ul>
     <li>Fork the repository.</li>
